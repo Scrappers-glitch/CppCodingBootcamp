@@ -13,7 +13,7 @@ workDir='/home/twisted/GradleProjects/CppCodingBootcamp'
 #2) delete old build
 oldbuild=(${workDir}'/build/.build/*')
 for ((idx=0; idx < ${#oldbuild[@]}; idx++)); do
-rm ${oldbuild[$idx]}
+    rm ${oldbuild[$idx]}
 done
 
 ##remove the dir
@@ -32,7 +32,7 @@ merge[1]=${main}
 #4) copy cpp files to a gather directory
 for ((idx=0; idx < ${#merge[@]}; idx++)); do
 ##act on ${merge[$idx]}
-cp ${merge[$idx]} ${workDir}'/build/.build'
+    cp ${merge[$idx]} ${workDir}'/build/.build'
 done
 
 # 5) get the final String

@@ -14,7 +14,7 @@ workDir='/home/twisted/GradleProjects/CppCodingBootcamp'
 oldbuild=(${workDir}'/build/.build/*')
 for ((idx=0; idx < ${#oldbuild[@]}; idx++)); do
     rm ${oldbuild[$idx]}
-done
+don
 
 ##remove the dir
 rmdir ${workDir}'/build/.build/'

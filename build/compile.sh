@@ -29,7 +29,7 @@ main=(${workDir}'/src/main/*')
 merge[0]=${libs}
 merge[1]=${main}
 
-#4) copy cpp files to a gather director
+#4) copy cpp files to a gather directory
 for ((idx=0; idx < ${#merge[@]}; idx++)); do
 ##act on ${merge[$idx]}
     cp ${merge[$idx]} ${workDir}'/build/.build'

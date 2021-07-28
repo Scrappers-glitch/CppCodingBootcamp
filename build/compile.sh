@@ -13,7 +13,7 @@ workDir='/home/twisted/GradleProjects/CppCodingBootcamp'
 #2) delete old build
 oldbuild=(${workDir}'/build/.build/*')
 for ((idx=0; idx < ${#oldbuild[@]}; idx++)); do
-rm ${oldbuild[$idx]}
+    rm ${oldbuild[$idx]}
 done
 
 ##remove the dir
@@ -23,8 +23,8 @@ rmdir ${workDir}'/build/.build/'
 mkdir ${workDir}'/build/.build'
 
 ##attrs : dir to compile & sharedLib name
-libs=('/home/twisted/GradleProjects/CppCodingBootcamp/src/libs/*')
-main=('/home/twisted/GradleProjects/CppCodingBootcamp/src/main/*')
+libs=(${workDir}'/src/libs/*')
+main=(${workDir}'/src/main/*')
 
 merge[0]=${libs}
 merge[1]=${main}
@@ -32,7 +32,7 @@ merge[1]=${main}
 #4) copy cpp files to a gather directory
 for ((idx=0; idx < ${#merge[@]}; idx++)); do
 ##act on ${merge[$idx]}
-cp ${merge[$idx]} ${workDir}'/build/.build'
+    cp ${merge[$idx]} ${workDir}'/build/.build'
 done
 
 # 5) get the final String
@@ -43,8 +43,8 @@ final=${workDir}'/build/.build/*'
 sharedlib='shared'
 executable='CppCodeCamp.exec'
 # 7) compile files with inclusions
-g++ -x c++ -I'/home/twisted/GradleProjects/CppCodingBootcamp/src/includes' -o ${sharedlib} ${final}
-clang++ -x c++ -I'/home/twisted/GradleProjects/CppCodingBootcamp/src/includes' -o ${executable} ${final}
+g++ -x c++ -I${workDir}'/src/includes' -o ${sharedlib} ${final}
+clang++ -x c++ -I${workDir}'/src/includes' -o ${executable} ${final}
 # 7) move files to output dir
 ##prepare dirs
 builddir=${workDir}'/build/'

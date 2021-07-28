@@ -23,8 +23,8 @@ rmdir ${workDir}'/build/.build/'
 mkdir ${workDir}'/build/.build'
 
 ##attrs : dir to compile & sharedLib name
-libs=('/home/twisted/GradleProjects/CppCodingBootcamp/src/libs/*')
-main=('/home/twisted/GradleProjects/CppCodingBootcamp/src/main/*')
+libs=(${workDir}'/src/libs/*')
+main=(${workDir}'/src/main/*')
 
 merge[0]=${libs}
 merge[1]=${main}
@@ -43,8 +43,8 @@ final=${workDir}'/build/.build/*'
 sharedlib='shared'
 executable='CppCodeCamp.exec'
 # 7) compile files with inclusions
-g++ -x c++ -I'/home/twisted/GradleProjects/CppCodingBootcamp/src/includes' -o ${sharedlib} ${final}
-clang++ -x c++ -I'/home/twisted/GradleProjects/CppCodingBootcamp/src/includes' -o ${executable} ${final}
+g++ -x c++ -I${workDir}'/src/includes' -o ${sharedlib} ${final}
+clang++ -x c++ -I${workDir}'/src/includes' -o ${executable} ${final}
 # 7) move files to output dir
 ##prepare dirs
 builddir=${workDir}'/build/'

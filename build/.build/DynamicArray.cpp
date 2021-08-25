@@ -17,7 +17,7 @@ DynamicArray<T>::~DynamicArray(){
     destroyMemory();
 }
 template <class T>        
-const int DynamicArray<T>::getLength(){
+const int& DynamicArray<T>::getLength(){
     return length;
 }
 template <class T>        
@@ -60,7 +60,7 @@ DynamicArray<T>& DynamicArray<T>::operator-(int position){
     return *this;
 }
 template <class T>        
-T DynamicArray<T>::get(int position){ 
+T& DynamicArray<T>::get(int position){ 
     return ptr[position];
 }
 template <class T>        

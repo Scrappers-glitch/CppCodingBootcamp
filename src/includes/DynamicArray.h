@@ -16,7 +16,7 @@ namespace Scrappers{
                 ~DynamicArray();
                  T add(T object);
                  T add(int position, T object);
-                 T get(int position);
+                 T& get(int position);
                  T* remove(T* &object);
                  void removeAt(int position);
                  virtual void forEach();
@@ -26,7 +26,7 @@ namespace Scrappers{
                  DynamicArray deepCopy(DynamicArray &instance);
                  DynamicArray& operator+(T object);
                  DynamicArray& operator-(int position);
-                 const int getLength();
+                 const int& getLength();
                  void print();
         };
 };
